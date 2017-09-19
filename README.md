@@ -23,3 +23,43 @@ You can also create original badges!
 ![developer|Haskeller](./output-svg/developer-haskeller.svg)
 ![creator|YouTuber](./output-svg/creator-youtuber.svg)
 etc...
+
+## How to use as a library
+
+```scala
+import scala.xml.Elem
+import io.github.nwtgck.svg_badge.SvgBadgeMaker
+
+val svg: Elem = SvgBadgeMaker.generate(width= 78, headWidth= 47, headName = "license", tailName = "MIT", badgeColor = "#007ec6")
+
+// Then you can use `svg` variable, for example, `println(svg)` or something.
+```
+
+or (use `smartGenerate` which allows you not to specify widths)
+
+```scala
+import scala.xml.Elem
+import io.github.nwtgck.svg_badge.SvgBadgeMaker
+
+val svg: Elem = SvgBadgeMaker.smartGenerate(headName = "license", tailName = "MIT", badgeColor = "#007ec6")
+
+// Then you can use `svg` variable, for example, `println(svg)` or something.
+```
+
+## How to use this as an execution program
+
+```sh
+$ cd <this repo>
+$ sbt "runMain io.github.nwtgck.svg_badge.Main" <subject:String> <status:String> <color:String> 
+``` 
+
+### Example - [build | passing]
+
+```sh
+$ sbt "runMain io.github.nwtgck.svg_badge.Main build passing #6c3" 
+```
+
+Then you can get `'./build-passing.svg'`
+
+
+

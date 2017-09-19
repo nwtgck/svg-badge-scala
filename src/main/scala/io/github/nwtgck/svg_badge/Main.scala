@@ -7,7 +7,13 @@ import scala.xml.Elem
 object Main {
 
   def main(args: Array[String]): Unit = {
-    writeFile("./output-svg/out.svg", SvgBadgeMaker.smartGenerate(headName = "developer", tailName = "Scala", badgeColor = "#007ec6"))
+    args match {
+      case Array(subject, status, color) =>
+        writeFile(s"./${subject}-${status}.svg", SvgBadgeMaker.smartGenerate(headName = subject, tailName = status, badgeColor = color))
+      case _                  =>
+        System.err.println("""Usage: sbt "runMain io.github.nwtgck.svg_badge.Main" <subject:String> <status:String> <color:String> """)
+        System.exit(1)
+    }
   }
 
   def writeFile(outPath: String, svg: Elem): Unit = {
