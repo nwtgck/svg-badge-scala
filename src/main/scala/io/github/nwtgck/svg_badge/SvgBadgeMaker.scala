@@ -3,7 +3,7 @@ package io.github.nwtgck.svg_badge
 import scala.xml.Elem
 
 object SvgBadgeMaker {
-  def generate(width: Int = 78, headWidth: Int = 47, headName: String = "license", tailName: String = "MIT", badgeColor: String = "#007ec6"): Elem = { // TODO Change badgeColor better type
+  def generate(width: Int, headWidth: Int, headName: String, tailName: String, badgeColor: String): Elem = { // TODO Change badgeColor better type
 
     val height    : Int    = 20
     val tailWidth : Int    = width - headWidth
