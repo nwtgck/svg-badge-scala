@@ -25,9 +25,11 @@ object Main {
     // [developer|Pythonista]
     writeFile("./output-svg/developer-pythonista.svg", SvgBadgeMaker.generate(width = 140, headWidth = 65, headName = "developer", tailName = "Pythonista", badgeColor = "#eac210"))
     // [developer|Rubyist]
-    writeFile("./output-svg/developer-rubyist.svg", SvgBadgeMaker.generate(width = 140, headWidth = 65, headName = "developer", tailName = "Rubyist", badgeColor = "#cc342d"))
+    writeFile("./output-svg/developer-rubyist.svg", SvgBadgeMaker.generate(width = 120, headWidth = 65, headName = "developer", tailName = "Rubyist", badgeColor = "#cc342d"))
+    // [developer|Haskeller]
+    writeFile("./output-svg/developer-haskeller.svg", SvgBadgeMaker.generate(width = 130, headWidth = 70, headName = "developer", tailName = "Haskeller", badgeColor = "#8f4e8b"))
     // [creator|YouTuber]
-    writeFile("./output-svg/creator-youtuber.svg", SvgBadgeMaker.generate(width = 120, headWidth = 50, headName = "creator", tailName = "YouTuber", badgeColor = "#ff0000"))
+    writeFile("./output-svg/creator-youtuber.svg", SvgBadgeMaker.generate(width = 115, headWidth = 50, headName = "creator", tailName = "YouTuber", badgeColor = "#ff0000"))
 
   }
 }
