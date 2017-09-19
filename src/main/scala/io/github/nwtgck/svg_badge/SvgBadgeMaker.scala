@@ -3,6 +3,29 @@ package io.github.nwtgck.svg_badge
 import scala.xml.Elem
 
 object SvgBadgeMaker {
+
+  /**
+    * Generate SVG element considering the length of text
+    * @param headName
+    * @param tailName
+    * @param badgeColor
+    * @return
+    */
+  def smartGenerate(headName: String, tailName: String, badgeColor: String): Elem = {
+    val headWidth : Int     = textToWidth(headName)
+    val width     : Int     = textToWidth(headName+tailName)
+    generate(width = width, headWidth=headWidth, headName=headName, tailName=tailName, badgeColor=badgeColor)
+  }
+
+  /**
+    * Generate SVG element
+    * @param width
+    * @param headWidth
+    * @param headName
+    * @param tailName
+    * @param badgeColor
+    * @return
+    */
   def generate(width: Int, headWidth: Int, headName: String, tailName: String, badgeColor: String): Elem = { // TODO Change badgeColor better type
 
     val height    : Int    = 20
@@ -30,5 +53,9 @@ object SvgBadgeMaker {
         <text x={s"$tailX"} y="14">{tailName}</text>
       </g>
     </svg>
+  }
+
+  private def textToWidth(text: String): Int = {
+    text.map(e => if(e.isLower) 7 else if(e.isUpper) 10 else 8 ).sum
   }
 }

@@ -6,14 +6,17 @@ import scala.xml.Elem
 
 object Main {
 
+  def main(args: Array[String]): Unit = {
+    writeFile("./output-svg/out.svg", SvgBadgeMaker.smartGenerate(headName = "developer", tailName = "Scala", badgeColor = "#007ec6"))
+  }
+
   def writeFile(outPath: String, svg: Elem): Unit = {
     val fileWriter = new PrintWriter(new File(outPath))
     fileWriter.println(svg)
     fileWriter.close()
   }
 
-  def main(args: Array[String]): Unit = {
-
+  def examples(): Unit = {
     // [license|MIT]
     writeFile("./output-svg/license-mit.svg", SvgBadgeMaker.generate(width= 78, headWidth= 47, headName = "license", tailName = "MIT", badgeColor = "#007ec6"))
     // [build|passing]
@@ -30,6 +33,5 @@ object Main {
     writeFile("./output-svg/developer-haskeller.svg", SvgBadgeMaker.generate(width = 130, headWidth = 70, headName = "developer", tailName = "Haskeller", badgeColor = "#8f4e8b"))
     // [creator|YouTuber]
     writeFile("./output-svg/creator-youtuber.svg", SvgBadgeMaker.generate(width = 115, headWidth = 50, headName = "creator", tailName = "YouTuber", badgeColor = "#ff0000"))
-
   }
 }
