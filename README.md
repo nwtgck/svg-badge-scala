@@ -30,7 +30,7 @@ etc...
 import scala.xml.Elem
 import io.github.nwtgck.svg_badge.SvgBadgeMaker
 
-val svg: Elem = SvgBadgeMaker.generate(width= 78, headWidth= 47, headName = "license", tailName = "MIT", badgeColor = "#007ec6")
+val svg: Elem = SvgBadgeMaker.generate(width = 90, subjectWidth = 40, subjectText = "build", statusText = "passing", badgeColor = "#6c3")
 
 // Then you can use `svg` variable, for example, `println(svg)` or something.
 ```
@@ -41,7 +41,7 @@ or (use `smartGenerate` which allows you not to specify widths)
 import scala.xml.Elem
 import io.github.nwtgck.svg_badge.SvgBadgeMaker
 
-val svg: Elem = SvgBadgeMaker.smartGenerate(headName = "license", tailName = "MIT", badgeColor = "#007ec6")
+val svg: Elem = SvgBadgeMaker.smartGenerate(subjectText = "build", statusText = "passing", badgeColor = "#6c3")
 
 // Then you can use `svg` variable, for example, `println(svg)` or something.
 ```
