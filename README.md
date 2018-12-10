@@ -1,10 +1,10 @@
-# SVG Badge maker in Scala
+# svg-badge
 
-Create your original badge!
+Create your original badges
 
 ## Usual badges
 
-You can create usual badges.
+You can create badges widely used by your own!
 
 ![build|passing](./output-svg/build-passing.svg)
 
@@ -46,7 +46,7 @@ val svg: Elem = SvgBadgeMaker.smartGenerate(subjectText = "build", statusText = 
 // Then you can use `svg` variable, for example, `println(svg)` or something.
 ```
 
-## How to use this as an execution program
+## How to use this as an executable program
 
 ```sh
 $ cd <this repo>
