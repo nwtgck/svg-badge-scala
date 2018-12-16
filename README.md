@@ -1,4 +1,5 @@
 # svg-badge
+[![CircleCI](https://circleci.com/gh/nwtgck/svg-badge-scala.svg?style=shield)](https://circleci.com/gh/nwtgck/svg-badge-scala)
 
 Create your original badges
 
